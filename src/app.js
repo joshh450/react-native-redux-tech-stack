@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
@@ -9,7 +9,11 @@ import LibraryList from './components/LibraryList';
 const App = () => {
     return (
         <Provider store={createStore(reducers)}>
-            <View>
+            <View style={{ flex: 1 }}>
+                <StatusBar
+                    backgroundColor="#0047EA"
+                    barStyle="light-content"
+                />
                 <Header headerText="Tech Stack" />
                 <LibraryList />
             </View>
